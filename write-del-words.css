@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.title{
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 5px 5px #fff;
+}
+body{
+    background: #0BC489;
+}
+.box{
+    width: 80vw;
+    height: 50px;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.cursor{
+    display: inline-block;
+    height: 50%;
+    width: 5px;
+    background: #fff;
+    vertical-align: middle;
+    animation: blinking .6s ease infinite;
+}
+@keyframes blinking{
+    50%{
+        opacity: 0;
+    }
+}
