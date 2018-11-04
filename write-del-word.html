@@ -18,7 +18,7 @@
         <span class="cursor"></span>
     </div>
     <script>
-        let writeWord = (function(showTime,delayTime,disappearTime){
+        let writeWord = (function(showTime, delayTime, disappearTime){
             const parmirySentence = ['张安宇真是一个帅得不行的牛逼啊'];
             let text = '';
             let i = 0;
@@ -26,34 +26,33 @@
             let content = document.querySelector('.content');
             let cursor = document.querySelector('.cursor');
             let ori = arguments.callee;
-            function delay(time){
+            function delay (time) {
                 let nowTime = Date.now();
-                while(Date.now() - nowTime < time){
-                }
+                while (Date.now() - nowTime < time) {}
             }
-            parmirySentence.forEach(v=>{
-                let timer = setInterval(function(){
-                    if(i<v.length){
-                        dur.push(v.charAt(i++))
-                        content.innerHTML = dur.join('')
+            parmirySentence.forEach(v => {
+                let timer = setInterval(function() {
+                    if (i < v.length) {
+                        dur.push(v.charAt(i++));
+                        content.innerHTML = dur.join('');
                     }else{
-                        clearInterval(timer)
-                        delay(delayTime)
-                        let disappear =  setInterval(function(){
-                            if(i>0){
-                                dur.pop(v.charAt(i--))
-                                content.innerHTML = dur.join('')
-                            }else{
+                        clearInterval(timer);
+                        delay(delayTime);
+                        let disappear =  setInterval(function() {
+                            if (i > 0) {
+                                dur.pop(v.charAt(i--));
+                                content.innerHTML = dur.join('');
+                            } else {
                                 clearInterval(disappear);
-                                delay(2000)
-                                ori(80,2000,100)
+                                delay(2000);
+                                ori(80, 2000, 100);
                             }
-                        },disappearTime)
+                        },disappearTime);
                     }
-                },showTime)
-            })
+                },showTime);
+            });
             
-        })(80,2000,100)
+        })(80,2000,100);
     </script>
 </body>
 </html>
